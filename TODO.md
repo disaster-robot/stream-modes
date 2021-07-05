@@ -14,3 +14,21 @@ backend service that provides an API for cool stuff.
     - just something to provide whatever context i feel necessary
     - im thinking sometimes ill input a ! chat command that further
       explains the task and project being worked on.
+
+* technology
+    - client
+        * curl
+    - api backend
+        * flask
+            - lightweight
+            - theoretically accessible to more people on twitch than ruby (disaster_robot's primary proficiency)
+    - widget ui
+        * vanilla js
+            - the widget is a pretty minor js implementation, prob
+              doesnt warrent much more than vanilla js
+
+## 1.0+ spec
+
+* Analytics on widget state change
+* Web sockets
+* Automatic mode transitions
