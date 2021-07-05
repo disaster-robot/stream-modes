@@ -1,6 +1,5 @@
 # TODO
 
-2. create text component for each of status, text, and timer
 3. do some basic styling
     - show the status line contained within the bottom left of the stream
       window or maybe across the entire bottom of the stream window like
