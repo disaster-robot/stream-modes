@@ -1,5 +1,13 @@
 # TODO
 
+1. set up basic front-end build pipeline and dev environment
+2. create text component for each of status, text, and timer
+3. do some basic styling
+    - show the status line contained within the bottom left of the stream
+      window or maybe across the entire bottom of the stream window like
+      the windows taskbar
+4. actually display it on stream
+
 ## MVP spec
 
 The MVP for this project is an HTML widget that possesses the features
