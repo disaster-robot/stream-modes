@@ -55,3 +55,4 @@ of a plugin that allows viewers to interact with the stream window
 see cardboardlive for magic the gathering which allows viewers to hover
 their mouse over a card on the stream and see a popup showing an
 enlarged version of the card.
+* Somehow encourage chat to converse amongst themselves similar to what happens in a Bob Ross stream.
