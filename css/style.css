@@ -90,6 +90,10 @@ textarea {
 .widget-container {
   display: flex;
   justify-content: space-around;
+  font-weight: bold;
+  font-size: 32px;
+  color: #ff007f;
+  background-color: #000;
 }
 
 /* ==========================================================================
