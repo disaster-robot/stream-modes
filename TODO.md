@@ -57,3 +57,9 @@ backend service that provides an API for cool stuff.
 * Analytics on widget state change
 * Web sockets
 * Automatic mode transitions
+* for things like !project, allow viewers to hover the command to see the
+command's actual text output without sending it in chat. for an example
+of a plugin that allows viewers to interact with the stream window
+see cardboardlive for magic the gathering which allows viewers to hover
+their mouse over a card on the stream and see a popup showing an
+enlarged version of the card.
