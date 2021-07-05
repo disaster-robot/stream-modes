@@ -52,7 +52,7 @@ backend service that provides an API for cool stuff.
 * POST /widgets/:widget_uuid/mode/:mode_uuid
     - Set the widget mode
 
-## 1.0+ spec
+## 1.0+ ideas
 
 * Analytics on widget state change
 * Web sockets
