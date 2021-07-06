@@ -1,5 +1,14 @@
 # TODO
 
+* Implement a command that transitions to focus mode.
+    - Start the countdown timer.
+    - Change the mode display on the statusline.
+- Implement a command that transitions to vibe mode.
+    - Hide timer.
+    - Change the mode display.
+- Implement a command that updates the statusline text.
+- Automatically push state changes to widget.
+
 ## MVP spec
 
 The MVP for this project is an HTML widget that possesses the features
