@@ -1,8 +1,14 @@
 # TODO
 
-* dynamic status line widget
-    - set up simple web server
-    - see if widget can read from server over localhost
+
+* Implement a command that transitions to focus mode.
+    - Start the countdown timer.
+    - Change the mode display on the statusline.
+- Implement a command that transitions to vibe mode.
+    - Hide timer.
+    - Change the mode display.
+- Implement a command that updates the statusline text.
+- Automatically push state changes to widget.
 
 ## MVP spec
 
@@ -59,3 +65,4 @@ of a plugin that allows viewers to interact with the stream window
 see cardboardlive for magic the gathering which allows viewers to hover
 their mouse over a card on the stream and see a popup showing an
 enlarged version of the card.
+* Somehow encourage chat to converse amongst themselves similar to what happens in a Bob Ross stream.
