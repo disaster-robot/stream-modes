@@ -1,5 +1,6 @@
 # TODO
 
+
 * Implement a command that transitions to focus mode.
     - Start the countdown timer.
     - Change the mode display on the statusline.
@@ -43,15 +44,15 @@ backend service that provides an API for cool stuff.
         * default_mode
         * timer_enabled
         * text
+
 * POST /widgets/:widget_uuid
     - Update a widget
     - Args:
         * text
+        * mode
+
 * POST /widgets/:widget_uuid/timer/start
 * POST /widgets/:widget_uuid/timer/stop
-
-* POST /widgets/:widget_uuid/mode/:mode_uuid
-    - Set the widget mode
 
 ## 1.0+ ideas
 
