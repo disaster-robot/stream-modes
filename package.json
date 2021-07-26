@@ -1,0 +1,19 @@
+{
+  "name": "stream-modes",
+  "version": "0.0.1",
+  "description": "This is an HTML widget meant for being displayed on stream overlays.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc ./static/js/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disaster-robot/stream-modes.git"
+  },
+  "author": "Disaster Robot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/disaster-robot/stream-modes/issues"
+  },
+  "homepage": "https://github.com/disaster-robot/stream-modes#readme"
+}
