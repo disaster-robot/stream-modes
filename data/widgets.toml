@@ -1,0 +1,9 @@
+[focus]
+    [timer]
+    [text]
+        focus mode - will interact after timer expires
+    [text]
+        !project
+[vibe]
+    [text]
+        vibe mode - no agenda
