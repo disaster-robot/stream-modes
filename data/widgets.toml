@@ -1,9 +1,8 @@
 [focus]
-    [timer]
-    [text]
-        focus mode - will interact after timer expires
-    [text]
-        !project
+    timer = true
+    mode = "focus mode"
+    mode_description = "interaction with chat after timer expires"
+    command = "!project"
 [vibe]
-    [text]
-        vibe mode - no agenda
+    mode = "vibe mode"
+    mode_description = "vibin"
