@@ -18,10 +18,40 @@ xhr.onload = function(e) {
     center = widgetData["center"];
     right = widgetData["right"];
 
-    leftWidget.innerHTML = left;
+    // leftWidget.innerHTML = left;
+    renderTimer(leftWidget, 2, 30, 0);
     centerWidget.innerHTML = center;
     rightWidget.innerHTML = right;
 }
 
 xhr.open('GET', '/widgets/auuid');
 xhr.send();
+
+// https://www.w3schools.com/howto/howto_js_countdown.asp
+const MS_PER_DAY = (1000 * 60 * 60 * 24);
+const MS_PER_HOUR = (1000 * 60 * 60);
+const MS_PER_MIN = (1000 * 60);
+const MS_PER_SEC = 1000;
+
+function renderTimer(el, h, m, s) {
+    var now, countDownDate, distance;
+    var remainingHours, remainingMinutes, remainingSeconds;
+
+    countDownDate = new Date().getTime() +(h * MS_PER_HOUR) + (m * MS_PER_MIN) + (s * MS_PER_SEC);
+
+    setInterval(function() {
+      now = new Date().getTime();
+      distance = countDownDate - now;
+
+      remainingHours = Math.floor((distance % MS_PER_DAY) / MS_PER_HOUR);
+      remainingMinutes = Math.floor((distance % MS_PER_HOUR) / MS_PER_MIN);
+      remainingSeconds = Math.floor((distance % MS_PER_MIN) / MS_PER_SEC);
+
+      el.innerHTML = remainingHours + "h " + remainingMinutes + "m " + remainingSeconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        el.innerHTML = "EXPIRED";
+      }
+    }, 1000);
+}
