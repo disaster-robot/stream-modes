@@ -14,4 +14,4 @@ def hello():
 
 @app.route("/widgets/<widget_uuid>")
 def widget(widget_uuid):
-    return json.dumps({ "left": "timer:25m", "center": "text:!project", "right": "text:vibe mode" })
+    return json.dumps({ "left": "timer:0h:25m:0s", "center": "text:!project", "right": "text:vibe mode" })

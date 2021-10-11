@@ -12,14 +12,17 @@ let rightWidget = document.getElementById("right");
 
 let widgetData, left, center, right;
 
+let timerRegex = /^timer:(\d+)h:(\d+)m:(\d+)s$/;
+
 xhr.onload = function(e) {
     widgetData = JSON.parse(xhr.response);
     left = widgetData["left"];
     center = widgetData["center"];
     right = widgetData["right"];
 
+    var timerMatch = timerRegex.exec(left);
     // leftWidget.innerHTML = left;
-    renderTimer(leftWidget, 2, 30, 0);
+    renderTimer(leftWidget, timerMatch[1], timerMatch[2], timerMatch[3]);
     centerWidget.innerHTML = center;
     rightWidget.innerHTML = right;
 }
