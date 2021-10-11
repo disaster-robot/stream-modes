@@ -8,25 +8,34 @@ function updateWidget() {
 
 xhr.onreadystatechange = updateWidget;
 
-let leftWidget = document.getElementById("left");
-let centerWidget = document.getElementById("center");
-let rightWidget = document.getElementById("right");
-
-let widgetData, left, center, right;
-
-let timerRegex = /^timer:(\d+)h:(\d+)m:(\d+)s$/;
+let widgetEls = {
+  "left": document.getElementById("left"),
+  "center": document.getElementById("center"),
+  "right": document.getElementById("right")
+};
 
 xhr.onload = function(e) {
-    widgetData = JSON.parse(xhr.response);
-    left = widgetData["left"];
-    center = widgetData["center"];
-    right = widgetData["right"];
+    let statusLineData = JSON.parse(xhr.response);
 
-    var timerMatch = timerRegex.exec(left);
-    // leftWidget.innerHTML = left;
-    renderTimer(leftWidget, timerMatch[1], timerMatch[2], timerMatch[3]);
-    centerWidget.innerHTML = center;
-    rightWidget.innerHTML = right;
+    for (const [widgetPosition, widgetData] of Object.entries(statusLineData)) {
+
+      switch(widgetData.type) {
+      case "text":
+        widgetEls[widgetPosition].innerHTML = widgetData.value;
+        break;
+      case "timer":
+        renderTimer(
+          widgetEls[widgetPosition],
+          widgetData.hours,
+          widgetData.mins,
+          widgetData.secs
+        );
+
+        break;
+      default:
+        console.error(`unknown widget type ${widgetType}`);
+      }
+    };
 }
 
 xhr.open('GET', '/widgets/auuid');
