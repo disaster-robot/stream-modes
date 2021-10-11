@@ -1,0 +1,8 @@
+[focus]
+    timer = true
+    mode = "focus mode"
+    mode_description = "interaction with chat after timer expires"
+    command = "!project"
+[vibe]
+    mode = "vibe mode"
+    mode_description = "vibin"
