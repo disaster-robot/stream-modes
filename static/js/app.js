@@ -1,3 +1,5 @@
+let DateTime = luxon.DateTime;
+
 var xhr = new XMLHttpRequest();
 
 function updateWidget() {
@@ -30,29 +32,18 @@ xhr.onload = function(e) {
 xhr.open('GET', '/widgets/auuid');
 xhr.send();
 
-// https://www.w3schools.com/howto/howto_js_countdown.asp
-const MS_PER_DAY = (1000 * 60 * 60 * 24);
-const MS_PER_HOUR = (1000 * 60 * 60);
-const MS_PER_MIN = (1000 * 60);
-const MS_PER_SEC = 1000;
-
 function renderTimer(el, h, m, s) {
-    var now, countDownDate, distance;
+    var now, countDownDate, timeDiff;
     var remainingHours, remainingMinutes, remainingSeconds;
 
-    countDownDate = new Date().getTime() +(h * MS_PER_HOUR) + (m * MS_PER_MIN) + (s * MS_PER_SEC);
+    countDownTime = DateTime.now().plus({hours: h, minutes: m, seconds: s});
 
     setInterval(function() {
-      now = new Date().getTime();
-      distance = countDownDate - now;
+      timeDiff = countDownTime.diff(DateTime.now(), ['hours', 'minutes', 'seconds']);
 
-      remainingHours = Math.floor((distance % MS_PER_DAY) / MS_PER_HOUR);
-      remainingMinutes = Math.floor((distance % MS_PER_HOUR) / MS_PER_MIN);
-      remainingSeconds = Math.floor((distance % MS_PER_MIN) / MS_PER_SEC);
+      el.innerHTML = timeDiff.hours + "h " + timeDiff.minutes + "m " + parseInt(timeDiff.seconds) + "s ";
 
-      el.innerHTML = remainingHours + "h " + remainingMinutes + "m " + remainingSeconds + "s ";
-
-      if (distance < 0) {
+      if (timeDiff < 0) {
         clearInterval(x);
         el.innerHTML = "EXPIRED";
       }
